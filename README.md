@@ -9,5 +9,5 @@
 . The miscellaneous section contains a bunch of old pieces.
 
 ```
-LEAF repos in tinker space:
-[1D cellular automata simulator](https://github.com/blairmunroakusaLEAF/cellularautomata_1d)
+LEAF repos in portfolio:
+[Rust, 1D cellular automata simulator](https://github.com/blairmunroakusaLEAF/cellularautomata_1d)

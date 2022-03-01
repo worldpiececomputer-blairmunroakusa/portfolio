@@ -1,3 +1,6 @@
 [submodule "cellularautomata_1d"]
 	path = cellularautomata_1d
 	url = https://github.com/blairmunroakusaLEAF/cellularautomata_1d
+[submodule "fractip"]
+	path = fractip
+	url = https://github.com/blairmunroakusaLEAF/fractip

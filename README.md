@@ -9,6 +9,8 @@
 . The miscellaneous section contains a bunch of old pieces.
 
 ```
-LEAF repos in portfolio:
+#### LEAF repos in portfolio:
+
 [Rust, 1D cellular automata simulator](https://github.com/blairmunroakusaLEAF/cellularautomata_1d)
+
 [dApp, Fractal Payment System](https://github.com/blairmunroakusaLEAF/fracpay)

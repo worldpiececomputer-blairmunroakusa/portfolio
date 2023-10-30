@@ -1,0 +1,39 @@
+# ignore
+
+# rust stuff
+target
+
+# misc stuff
+example-helloworld
+node_modules
+test-ledger
+~\$*
+*.swp
+.vscode/*
+
+# project stuff
+fracpay_client/src/*.js
+fracpay_client/src/yarn*
+fracpay_client/src/package-lock.json
+fracpay_server/Cargo.lock
+
+# soft local navigation links
+*\[
+]*
+
+# system stuff
+.DS_STORE
+
+
+## API / PYTHON ##
+*.pyc
+
+## WEB / JS ##
+node_modules/
+dist/
+
+## META / OS ##
+*.tmp
+.DS_Store
+.idea/
+

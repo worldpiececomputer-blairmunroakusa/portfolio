@@ -65,7 +65,7 @@ async function main() {
 		signedTX = await web3.eth.accounts.signTransaction(LiquidateTX, ATTACKPRIKEY);
 		await web3.eth.sendSignedTransaction(signedTX.rawTransaction, function(error, hash) {
   			if (!error) {console.log("Liquidate TX hash: ", hash);
-    			} else {console.log("Something went wrong while submitting your transaction:", error)}
+			} else {console.log("Something went wrong while submitting your transaction:", error)}
    		});
 
 	} catch (error) {

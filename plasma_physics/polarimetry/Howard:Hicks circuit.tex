@@ -1,0 +1,396 @@
+%======================	%
+%	LaTeX SETUP			%
+%======================	%
+\documentclass[landscape]{scrreprt}						% Change "article" to "report" to get rid of page number on title page
+\usepackage{amsmath,amsfonts,amsthm,amssymb,empheq,setspace,Tabbing,fancyhdr,lastpage,extramarks,chngpage,soul,color,graphicx,float,wrapfig,lscape}
+\usepackage[retainorgcmds]{IEEEtrantools}
+%======================	%
+%	TikZ SETUP			%
+%======================	%
+\usepackage{tikz,verbatim}
+\usetikzlibrary{shapes,arrows,positioning,calc,scopes,angles,quotes,decorations.markings}
+%======================	%
+%	MARGINS				%
+%======================	%
+\topmargin=-0.45in      
+\evensidemargin=0in     
+\oddsidemargin=0in      
+\textwidth=8in        
+\textheight=11.0in       
+\headsep=0.25in         
+%======================	%
+%	HEADER/FOOTER		%
+%======================	%
+                                
+%======================	%
+%	MATH COMMANDS		%
+%======================	%
+	%creates roman-script differential d, with added space
+\newcommand{\ud}{\,\mathrm{d}}
+	%partial derivative
+\newcommand{\pd}[2]{\frac {\partial #1}{\partial #2}}
+	%derivative
+\newcommand{\td}[2]{\frac {\mathrm{d} #1}{\mathrm{d} #2}}
+	%second derivative
+\newcommand{\tdd}[2]{\frac {\mathrm{d}^2 #1}{\mathrm{d} #2^2}}
+	%formats a numerical value with text units
+\newcommand{\val}[2]{#1 \text{ #2}}
+	%comment for IEEE aligned environment
+\newcommand{\comm}[1]{\text{#1}\qquad}
+
+%======================	%
+%	BEGIN DOCUMENT		%
+%======================	%
+\begin{document}
+
+\begin{tikzpicture}[
+	scale=1,
+	vector/.style={very thick,->, >=latex},
+	axis/.style={very thick, ->, >=stealth'}]
+
+%source
+
+	\begin{scope}
+\filldraw [black, very thick] (0,0) circle (3pt);
+\draw[axis] (0,0)--(0:0.5);
+	\end{scope}
+
+	\begin{scope}[shift={(1.5,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%Splitter (horizontal
+
+	\begin{scope}[shift={(3,0)}, rotate=45]
+\draw [very thick] (0,0.5)--++(180:0.075)--++(0:0.15);
+\draw [very thick] (0,0.5)--(0,-0.5)--++(-180:0.075)--++(0:0.15);
+	\end{scope}
+	
+	\begin{scope}[shift={(1.5,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+%plasma
+
+	\begin{scope}[shift={(4.5,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+\filldraw [pink] (6,0) circle (10pt);
+
+	\begin{scope}[shift={(6,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%polarizer
+
+	\begin{scope}[shift={(7.5,0)}]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+	
+	\begin{scope}[shift={(9,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%reflecting polarizer
+
+	\begin{scope}[shift={(10.5,0)},rotate=45]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+
+	\begin{scope}[shift={(10.65,0.15)},rotate=45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(10.5,-1.5)}, rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%splitter
+
+	\begin{scope}[shift={(10.5,-3)},rotate=-45]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+	
+	\begin{scope}[shift={(10.5,-4.5)}, rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+	\begin{scope}[shift={(12,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+%mirrors
+
+	\begin{scope}[shift={(13.5,-3)},rotate=45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(13.5,-6)},rotate=-45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(10.5,-6)},rotate=45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(12,-6)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+	\begin{scope}[shift={(13.5,-4.5)}, rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+	\begin{scope}[shift={(9,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(7.5,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(6,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(4.5,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(1.5,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(3,-1.5)},rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(3,-4.5)},rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+%polarizer	
+	
+	\begin{scope}[shift={(3,-3)}, rotate=-45]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+	
+%detector
+
+	\begin{scope}[shift={(0,-3)}]
+\filldraw [black, very thick] (0,0.2) rectangle (-0.4,-0.2);
+\draw [very thick] (-0.075,0)--++(30:0.4)--++(-90:0.4)--++(150:0.4);
+	\end{scope}
+	
+%dump
+
+	\begin{scope}[shift={(3,-6)}, rotate=-90]
+\filldraw [black, very thick] (0.075,0.5) rectangle (-0.075,-0.5)--++(135:0.25)--++(45:0.25)
+--++(-90:0.05)--++(135:0.25)--++(45:0.25);
+\filldraw [black, very thick] (-0.075,0.5)--++(-135:0.25)--++(-45:0.25);
+	\end{scope}
+
+%distances
+
+\draw [dashed] (3,1.5)--(3,4.5) (10.5,1.5)--(10.5,4.5) (13.5,1.5)--(13.5,4.5) (3,4)--(13.5,4);;
+\draw[dashed] (15,0)--(18,0) (15,-3)--(18,-3) (15,-6)--(18,-6) (17.5,0)--(17.5,-6);
+\draw (6.75,4.5) node{$d_1$} (12,4.5) node{$d_3$} (17.5,-1.5) node [right]{$d_2$} (17.5,-4.5) node [right]{$d_4$};
+\end{tikzpicture}
+
+\newpage
+Symbol definitions (with MATlab variable names):
+\\
+\\
+\\
+
+\begin{tikzpicture}[
+	scale=1,
+	vector/.style={very thick,->, >=latex},
+	axis/.style={very thick, ->, >=stealth'}]
+
+%source
+
+	\begin{scope}
+\filldraw [black, very thick] (0,0) circle (3pt);
+\draw[axis] (0,0)--(0:0.5);
+	\end{scope}
+
+	\begin{scope}[shift={(1.5,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%Splitter (horizontal)
+
+	\begin{scope}[shift={(3,0)}, rotate=45]
+\draw [very thick] (0,0.5)--++(180:0.075)--++(0:0.15);
+\draw [very thick] (0,0.5)--(0,-0.5)--++(-180:0.075)--++(0:0.15);
+	\end{scope}
+	
+	\begin{scope}[shift={(1.5,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+%plasma
+
+	\begin{scope}[shift={(4.5,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+\filldraw [pink] (7.5,0) circle (10pt);
+
+	\begin{scope}[shift={(6,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%polarizer
+
+	\begin{scope}[shift={(7.5,0)}]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+	
+	\begin{scope}[shift={(9,0)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%reflecting polarizer
+
+	\begin{scope}[shift={(10.5,0)},rotate=45]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+
+	\begin{scope}[shift={(10.65,0.15)},rotate=45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(10.5,-1.5)}, rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+%splitter
+
+	\begin{scope}[shift={(10.5,-3)},rotate=-45]
+\draw [very thick] (0,-0.5)--(0,0.5);
+\draw[very thick, fill=white] (0,0.5) circle (2pt) (0,-0.5) circle (2pt);
+	\end{scope}
+	
+	\begin{scope}[shift={(10.5,-4.5)}, rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+	\begin{scope}[shift={(12,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+%mirrors
+
+	\begin{scope}[shift={(13.5,-3)},rotate=45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(13.5,-6)},rotate=-45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(10.5,-6)},rotate=45]
+\draw [very thick] (0.075,0.5) rectangle (-0.075,-0.5);
+	\end{scope}
+	
+	\begin{scope}[shift={(12,-6)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+	\begin{scope}[shift={(13.5,-4.5)}, rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+
+	\begin{scope}[shift={(9,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(7.5,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(6,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(4.5,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(1.5,-3)}]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(3,-1.5)},rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	\begin{scope}[shift={(3,-4.5)},rotate=90]
+\draw [dashed, very thick] (-0.5,0)--(0.5,0);
+	\end{scope}
+	
+%polarizer	
+	
+	\begin{scope}[shift={(3,-3)}, rotate=-45]
+\draw [very thick] (0,0.5)--++(180:0.075)--++(0:0.15);
+\draw [very thick] (0,0.5)--(0,-0.5)--++(-180:0.075)--++(0:0.15);
+	\end{scope}
+%detector
+
+	\begin{scope}[shift={(0,-3)}]
+\filldraw [black, very thick] (0,0.2) rectangle (-0.4,-0.2);
+\draw [very thick] (-0.075,0)--++(30:0.4)--++(-90:0.4)--++(150:0.4);
+	\end{scope}
+	
+%dump
+
+	\begin{scope}[shift={(3,-6)}, rotate=-90]
+\filldraw [black, very thick] (0.075,0.5) rectangle (-0.075,-0.5)--++(135:0.25)--++(45:0.25)
+--++(-90:0.05)--++(135:0.25)--++(45:0.25);
+\filldraw [black, very thick] (-0.075,0.5)--++(-135:0.25)--++(-45:0.25);
+	\end{scope}
+
+%labels
+
+\draw (2.7,0.5)--(-2,3)--(-3,3) node [below left]{$\mathbf{H}_s\equiv$ Hs} 
+(-3,3) node [above left]{horizontal wiregrid}
+(-3,3.55) node [above left]{beam-splitter,};
+\draw (3.1,-2.5)--(-2,0)--(-3,0)node [below left]{$\mathbf{H}_a\equiv$ Ha}
+(-3,0)node [above left]{horizontal wiregrid}
+(-3,0.55)node [above left]{analyzer,};
+\draw (7.7,0.5)--(16,3)--(17,3) node [below right]{$\mathbf{A}(\psi)\equiv$ A}
+(17,3) node [above right]{rotatable wiregrid};
+\draw (10.8,0.5)--(16,1.5)--(17,1.5) node [below right]{$\mathbf{W}_{\pi/2}\equiv$ W}
+(17,1.5) node [above right]{quarter waveplate};
+\draw (10.8,-2.5)--(16,-0.5)--(17,-0.5)node [below right]{$\mathbf{X}_m\equiv$ Xm}
+(17,-0.5)node [above right]{unknown angle}
+(17,0.05)node [above right]{wiregrid mixer};
+\draw (13.8,-2.7)--(16,-1.8)--(17,-1.8)node [below right]{$\mathbf{M}_1\equiv$ M}
+(17,-1.8)node [above right]{reflector};
+\draw (13.8,-6)--(16,-7)--(17,-7)node [below right]{$\mathbf{M}_2\equiv$ M}
+(17,-7)node [above right]{reflector};
+\draw (10.8,-6.5)--(16,-9)--(17,-9)node [below right]{$\mathbf{M}_3\equiv$ M}
+(17,-9)node [above right]{reflector};
+
+\end{tikzpicture}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
